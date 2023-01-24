@@ -71,7 +71,7 @@
       border: none;
       }
       option {
-      background: black; 
+      background: pink; 
       border: none;
       }
       .checkbox input {
