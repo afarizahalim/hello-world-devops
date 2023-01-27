@@ -1,0 +1,17 @@
+---
+- name: Run tomcat container
+  become: yes
+  hosts: localhost
+  tasks:
+    - name: Build image
+      command: docker build -t tomcat /opt/ansibleAfa/
+    - name: Tag image
+      command: docker image tag tomcat:latest afarizahalim/tomcat:v3afa
+    - name: Push image
+      command: docker push afarizahalim/tomcat:v3afa
+    - name: Pull image
+      command: docker pull afarizahalim/tomcat:v3afa
+    - name: Delete container if exist
+      command: docker container rm -f tomcatafa
+    - name: Run container
+      command: docker container run -d --name tomcatafa afarizahalim/tomcat:v3afa
