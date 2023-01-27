@@ -12,7 +12,7 @@
 
 - name: Run container on dockerhost
   become: yes
-  hosts: 172.31.50.133
+  hosts: dockerhost
   tasks:
     - name: Pull image
       command: docker pull afarizahalim/tomcat:v4afa
