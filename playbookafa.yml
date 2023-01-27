@@ -14,4 +14,4 @@
     - name: Delete container if exist
       command: docker container rm -f tomcatafa
     - name: Run container
-      command: docker container run -d --name tomcatafa afarizahalim/tomcat:v4afa
+      command: docker container run -d --name tomcatafa -p 8090:8080 afarizahalim/tomcat:v4afa
